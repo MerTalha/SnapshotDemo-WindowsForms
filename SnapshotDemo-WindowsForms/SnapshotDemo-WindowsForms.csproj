@@ -138,6 +138,15 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="VisioForge.Controls, Version=14.4.12.0, Culture=neutral, PublicKeyToken=5873e863f1bcda5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.14.4.12\lib\net472\VisioForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="VisioForge.Controls.UI, Version=14.4.12.0, Culture=neutral, PublicKeyToken=eafa6bd21aa991fd, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.14.4.12\lib\net472\VisioForge.Controls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="VisioForge.Controls.UI.Dialogs, Version=14.4.12.0, Culture=neutral, PublicKeyToken=3d84672df68c33ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.14.4.12\lib\net472\VisioForge.Controls.UI.Dialogs.dll</HintPath>
+    </Reference>
     <Reference Include="VisioForge.Core, Version=15.5.94.0, Culture=neutral, PublicKeyToken=5873e863f1bcda5d, processorArchitecture=MSIL">
       <HintPath>..\packages\VisioForge.DotNet.Core.15.5.94\lib\net472\VisioForge.Core.dll</HintPath>
     </Reference>
@@ -149,6 +158,18 @@
     </Reference>
     <Reference Include="VisioForge.Libs.External, Version=15.5.88.0, Culture=neutral, PublicKeyToken=5d1ca667841fc6ab, processorArchitecture=MSIL">
       <HintPath>..\packages\VisioForge.Libs.External.15.5.88\lib\net472\VisioForge.Libs.External.dll</HintPath>
+    </Reference>
+    <Reference Include="VisioForge.MediaFramework, Version=14.4.12.0, Culture=neutral, PublicKeyToken=14e66dd726c53f11, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.14.4.12\lib\net472\VisioForge.MediaFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="VisioForge.Shared, Version=14.4.12.0, Culture=neutral, PublicKeyToken=4cb7f6778cad43a2, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.14.4.12\lib\net472\VisioForge.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="VisioForge.Tools, Version=14.4.12.0, Culture=neutral, PublicKeyToken=33c6ded9724deec2, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.14.4.12\lib\net472\VisioForge.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="VisioForge.Types, Version=14.4.12.0, Culture=neutral, PublicKeyToken=722de1c1c0a7f49e, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisioForge.DotNet.Core.TRIAL.14.4.12\lib\net472\VisioForge.Types.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -193,13 +214,21 @@
       <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x64.targets'))" />
-    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets'))" />
     <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
     <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
     <Error Condition="!Exists('..\packages\Sentry.3.33.1\build\Sentry.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Sentry.3.33.1\build\Sentry.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.Base.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.MP4.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.MP4.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x86.targets'))" />
   </Target>
-  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets')" />
   <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
   <Import Project="..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
   <Import Project="..\packages\Sentry.3.33.1\build\Sentry.targets" Condition="Exists('..\packages\Sentry.3.33.1\build\Sentry.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MediaPlayer.x64.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.Base.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x86.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.Base.x86.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.MP4.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x86.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.MP4.x86.15.5.94\build\VisioForge.DotNet.Core.Redist.MP4.x86.targets')" />
 </Project>
