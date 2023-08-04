@@ -8,9 +8,8 @@ using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.Threading;
 using Accord.Video.FFMPEG;
-
-
-
+using System.Diagnostics;
+using System.IO;
 
 namespace SnapshotDemo_WindowsForms
 {
@@ -66,80 +65,36 @@ namespace SnapshotDemo_WindowsForms
 
         private void btnStartRecording_Click(object sender, EventArgs e)
         {
-            if (!isRecording)
+            if (File.Exists(@"D:\ffmpeg\test.mp4"))
             {
-                isRecording = true;
-                btnStartRecording.Enabled = false;
-                btnStopRecording.Enabled = true;
-
-                recordingThread = new Thread(StartRecording);
-                recordingThread.Start();
+                File.Delete(@"D:\ffmpeg\test.mp4");
             }
+
+            StartRecording("test.mp4", 24);
 
         }
 
         private void btnStopRecording_Click(object sender, EventArgs e)
         {
-            if (isRecording)
-            {
-                isRecording = false;
-                btnStopRecording.Enabled = false;
-                btnStartRecording.Enabled = true;
-            }
+            Close();
 
         }
-
-        private void StartRecording()
+        Process process;
+        private void StartRecording(string FileName, int Framerate)
         {
-            try
-            {
-                Rectangle appBounds = this.Bounds;
-                Size size = appBounds.Size;
-                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string fileName = "screencast_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".avi";
-                string filePath = System.IO.Path.Combine(desktopPath, fileName);
+            process = new System.Diagnostics.Process();
+            process.StartInfo.FileName = @"D:\ffmpeg\bin\ffmpeg.exe";
+            process.EnableRaisingEvents = false;
+            process.StartInfo.WorkingDirectory = @"D:\ffmpeg";
+            process.StartInfo.Arguments = @"-f gdigrab -framerate" + Framerate + "-i desktop -preset ultrafast -pix_fmt yuv420p" + FileName;
+            process.Start();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.CreateNoWindow = false;
+        }
 
-                // VideoCapture cihazını oluşturun.
-                var captureDevice = new Accord.Video.DirectShow.ScreenCaptureStream(size.Width, size.Height);
-
-                // Video kayıt ayarlarını yapılandırın.
-                var writer = new VideoFileWriter();
-                writer.Width = size.Width;
-                writer.Height = size.Height;
-                writer.VideoCodec = Accord.Video.FFMPEG.VideoCodec.MPEG4;
-                writer.VideoOptions.BitRate = 5000000;
-                writer.VideoOptions.FramesPerSecond = 30;
-
-                // Video dosyasını oluşturun.
-                writer.Open(filePath, size.Width, size.Height);
-
-                while (isRecording)
-                {
-                    // Ekran görüntüsü alın.
-                    Bitmap screenshot = new Bitmap(size.Width, size.Height);
-                    using (Graphics graphics = Graphics.FromImage(screenshot))
-                    {
-                        graphics.CopyFromScreen(appBounds.Location, new Point(0, 0), size);
-                    }
-
-                    // Ekran görüntüsünü video dosyasına ekleyin.
-                    writer.WriteVideoFrame(screenshot);
-
-                    // Belirli bir zaman aralığıyla kayıt yapın (eğer gerekliyse).
-                    // Thread.Sleep(33); // 33ms => 30 FPS, 1000ms / 30 FPS ≈ 33ms
-                }
-
-                // Video dosyasını kapatın.
-                writer.Close();
-
-                // Kullanıcıya bildirim verin.
-                MessageBox.Show("Ekran kaydı başarıyla tamamlandı:\n" + filePath, "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                // Hata durumunda kullanıcıya uyarı verin.
-                MessageBox.Show("Bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        public void Close()
+        {
+            process.Close();
         }
     }
 }
