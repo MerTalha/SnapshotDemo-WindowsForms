@@ -10,6 +10,8 @@ using System.Threading;
 using Accord.Video.FFMPEG;
 using System.Diagnostics;
 using System.IO;
+using ScreenRecorderLib;
+
 
 namespace SnapshotDemo_WindowsForms
 {
@@ -65,22 +67,22 @@ namespace SnapshotDemo_WindowsForms
 
         private void btnStartRecording_Click(object sender, EventArgs e)
         {
-            if (File.Exists(@"D:\ffmpeg\test.mp4"))
+            /*if (File.Exists(@"D:\ffmpeg\test.mp4"))
             {
                 File.Delete(@"D:\ffmpeg\test.mp4");
-            }
+            }*/
 
-            StartRecording("test.mp4", 24);
+            //StartRecording("test.mp4", 24);
 
         }
 
         private void btnStopRecording_Click(object sender, EventArgs e)
         {
-            Close();
+            //Close();
 
         }
         Process process;
-        private void StartRecording(string FileName, int Framerate)
+        /*private void StartRecording(string FileName, int Framerate)
         {
             process = new System.Diagnostics.Process();
             process.StartInfo.FileName = @"D:\ffmpeg\bin\ffmpeg.exe";
@@ -90,11 +92,41 @@ namespace SnapshotDemo_WindowsForms
             process.Start();
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.CreateNoWindow = false;
-        }
+        }*/
 
-        public void Close()
+        /* public void Close()
+         {
+             process.Close();
+         }*/
+
+        Recorder _rec;
+        void CreateRecording()
         {
-            process.Close();
+            string videoPath = Path.Combine(Path.GetTempPath(), "test.mp4");
+            _rec = Recorder.CreateRecorder();
+            _rec.OnRecordingComplete += Rec_OnRecordingComplete;
+            _rec.OnRecordingFailed += Rec_OnRecordingFailed;
+            _rec.OnStatusChanged += Rec_OnStatusChanged;
+            //Record to a file
+            string videoPath = Path.Combine(Path.GetTempPath(), "test.mp4");
+            _rec.Record(videoPath);
+        }
+        void EndRecording()
+        {
+            _rec.Stop();
+        }
+        private void Rec_OnRecordingComplete(object sender, RecordingCompleteEventArgs e)
+        {
+            //Get the file path if recorded to a file
+            string path = e.FilePath;
+        }
+        private void Rec_OnRecordingFailed(object sender, RecordingFailedEventArgs e)
+        {
+            string error = e.Error;
+        }
+        private void Rec_OnStatusChanged(object sender, RecordingStatusEventArgs e)
+        {
+            RecorderStatus status = e.Status;
         }
     }
 }
