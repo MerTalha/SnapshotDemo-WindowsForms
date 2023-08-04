@@ -43,7 +43,7 @@
             this.btnCapture_Click.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCapture_Click.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCapture_Click.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCapture_Click.Location = new System.Drawing.Point(87, 47);
+            this.btnCapture_Click.Location = new System.Drawing.Point(136, 48);
             this.btnCapture_Click.Margin = new System.Windows.Forms.Padding(0);
             this.btnCapture_Click.Name = "btnCapture_Click";
             this.btnCapture_Click.Size = new System.Drawing.Size(220, 90);
@@ -76,7 +76,7 @@
             this.btnStartRecording.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnStartRecording.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnStartRecording.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnStartRecording.Location = new System.Drawing.Point(87, 155);
+            this.btnStartRecording.Location = new System.Drawing.Point(136, 156);
             this.btnStartRecording.Name = "btnStartRecording";
             this.btnStartRecording.Size = new System.Drawing.Size(220, 90);
             this.btnStartRecording.TabIndex = 3;
@@ -90,7 +90,7 @@
             this.btnStopRecording.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnStopRecording.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnStopRecording.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnStopRecording.Location = new System.Drawing.Point(87, 272);
+            this.btnStopRecording.Location = new System.Drawing.Point(136, 273);
             this.btnStopRecording.Name = "btnStopRecording";
             this.btnStopRecording.Size = new System.Drawing.Size(220, 90);
             this.btnStopRecording.TabIndex = 4;
@@ -227,7 +227,7 @@
             this.btnOpenFolder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOpenFolder.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnOpenFolder.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnOpenFolder.Location = new System.Drawing.Point(87, 380);
+            this.btnOpenFolder.Location = new System.Drawing.Point(136, 381);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(220, 90);
             this.btnOpenFolder.TabIndex = 6;
